@@ -26,7 +26,7 @@ let npsEnable = false;
 let org = `ACEA ENERGIA`;
 let consultantNumber = '';
 let postMessageEndInteraction = false;
-let version = `1.0.30 - Collaudo`;
+let version = `1.0.31 - Collaudo`;
 let interactionsMap = {};
 let queuesWithSharingUrlVisible = ['a15988f7-6d20-45a8-89dd-ca7de2321de2', ]
 
@@ -1824,6 +1824,8 @@ window.Framework = {
                         //console.log('openInteractionopenInteractionopenInteraction')
                         let channel = interaction.attributes.channel_type || 'Call Center';
                         let subchannel = interaction.attributes.custom_subchannel || channel + ' ' + interaction.direction;
+                        let chatbotsummary = interaction.attributes.chatbotsummary__c || ''; 
+                        console.log('chatbotsummary' , chatbotsummary)
 
                         window.parent.postMessage(JSON.stringify({
                             type: 'openInteraction',
@@ -1840,6 +1842,7 @@ window.Framework = {
                                 OwnerID: userId,
                                 InterlocutorEmail__c: interaction.attributes.c__interlocutoremail,
                                 InterlocutorNationalIdentityNumber__c: interaction.attributes.c__interlocutornationalidentitynumber,
+                                ChatbotSummary__c: chatbotsummary
                             },
                         }), '*', );
                     }
@@ -1896,7 +1899,7 @@ window.Framework = {
                         let interlocutornumber = ''; 
                         let  chatbotsummary = '';
                         let obj = endInteraction(interaction.id);
-						      if (interaction.direction === 'Outbound') {
+						if (interaction.direction === 'Outbound') {
                         channel = 'Call Center Outbound' ; 
                         console.log('interaction outbound', interaction)
                         subchannel = 'Call Center Outbound' ; 
