@@ -1925,7 +1925,7 @@ window.Framework = {
                                         OwnerID: userId,
                                         InterlocutorEmail__c: interlocutoremail,
                                         InterlocutorNationalIdentityNumber__c: interlocutornumber,
-                                        ChatbotSummary__c: ChatbotSummary__c
+                                        ChatbotSummary__c: chatbotsummary
                                     },
                                 },
                             }), '*', );
