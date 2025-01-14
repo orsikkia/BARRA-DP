@@ -26,7 +26,7 @@ let npsEnable = false;
 let org = `ACEA ENERGIA`;
 let consultantNumber = '';
 let postMessageEndInteraction = false;
-let version = `1.0.31 - Collaudo`;
+let version = `1.0.32 - Collaudo`;
 let interactionsMap = {};
 let queuesWithSharingUrlVisible = ['a15988f7-6d20-45a8-89dd-ca7de2321de2', ]
 
